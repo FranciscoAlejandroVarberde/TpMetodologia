@@ -1,0 +1,49 @@
+Documentacion GIT:
+Rollback --> es volver de una version con errores a una anterior estable
+------------------------------------------
+Usos de GIT:
+- historia sobre el codigo
+- Almacenar codigo
+- Trabajar en equipo
+- Detectar cuando se introdujo un error por medio de saber que commit fue el dio el error
+-------------------------------------------
+Configuracion:
+
+° git --version --> version de git 
+° git config --global user.name "nombre del usuario" --> Lo que hace esto es que podamos configurar nuestro nombre de usuario de git
+° git config --global user.email correo@mail.com --> Aca configuramos nuestros correo de manera global.
+° git config --global core.editor "code --wait" --> Con este comando le indicamos a git que establecemos como editor prefeterminado Visual studio Code y ademas el comando "--wait" significa que git esperará a que se cierre el editos para volver a utilizar la consola
+° git config --global -e --> vemos el archivo de la configuracion global en VS code.
+° git config --global core.autocrlf true/input --> Cuando trabajamos en grupo, cierto desarrolladores pueden trabajar en mac/linux/windows. Cuando subimos el codigo a la nube, los saltos de linea en windows se representan con CR (Carriege Return) o  LF (Line Feed), en cambio en los otros dos sistemas, se utiliza LF(Line Feed). Cuando useamos git para traer repositorios debemos debemos indicar "true" si usamos windows e input si usamos Mac/Linux
+° git config --global -h --> vemos todas las configuraciones que podemos realizar. Podemos jugar con ellas para probarlas.
+--------------------------------------------
+Comandos:
+
+° clear --> limpiar consola
+° ls --> lista todas las carpetas y los archivos en el directorio en que me encuentro
+° ls -a --> muestra todos los archivos y carpetar aunque esten ocultos
+° pwd --> me indica el directorio en donde me encuentro, en caso que no lo sepa
+° cd --> movernos entre carpeta
+° cd .. --> lo que nos permite es volver un nivel jerarquico por ejemplo: si estamos en c/user/archivos de programa, cuando ejecuto ese comando, vuelvo a c/user
+° mkdir "nombreDeCarpeta" --> nos permite crear una carpeta, en el directorio donde nos encontremos
+° git init --> inicializa un repositorio en el directorio
+° code . --> abre editor en la carpeta/directorio donde nos encontramos
+° git status --> este comando nos permite ver el seguimiento de nuestros archivos
+° git add nombreArchivo.txt --> pone en seguimiento a ese archivos en particular. 
+° git add *.txt --> en este caso, pone en seguimiento todos los archivos con extension .txt .La extension, obviamente puede cambiar (.htmt,.js,.py,etc)
+° git add . --> le hace seguimiento a todos los archivos que no se encuentra en seguimiento
+° git add archivo1.txt archivo2.txt --> puedo añadir varios archivos de esta manera separando solo con espacio}
+° git commit -m "mensaje que haga sentido" --> comprometemos nuestros cambios
+° git commit --> Se abre el editor predeterminado y nos pide añadir un mensaje. IMPORTANTE: una vez escrito el mensaje, debemos cerrar la pestaña
+° rm nombreArchivos.txt --> elimina un archivo
+° git restore nombreArchivo.txt --> restauramos archivo eliminado antes de ser comprometido
+° mv archivOrigen.txt archivoDestino.txt --> esto me permite renombrar o mover archivos
+° .gitignore --> si creamos este archivo, dentro de el, podemos indicar que archivos o variables de entorno, podemos evitar comprometer 
+° git diff --> veremos de una manera mas detallada los cambios. Para salir de la pantalla, apretamos la letra Q
+° git diff --staged --> nos va a mostrar todos los cambios que se van a encontrar en la etapa de stage.
+° git log --oneline --> con esto vamos a poder ver el historial de los cambios.
+° git branch --> nos dice en la rama en que estamos trabajando. Main y master es lo mismo
+° git checkout -b nombreRama --> con este comando creamos una rama y nos cambiamos a ella
+° cat nombreArchivo.txt --> muestra contenido de archivo
+° git checkout nombreRama --> me cambio de rama.
+° git merge nombreRama --> con esto unimos la rama al main. IMPORTANTE: debemos estar sobre la rama main/master
